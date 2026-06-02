@@ -169,7 +169,6 @@
   .glass {
     background: oklch(0.18 0.01 70 / 55%);
     backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
     border: 1px solid oklch(0.78 0.14 82 / 18%);
   }
 
@@ -211,6 +210,5 @@
 @keyframes reveal-up {
   0% { opacity: 0; transform: translateY(40px); }
   100% { opacity: 1; transform: translateY(0); }
-  }
-.animate-reveal { animation: reveal-up 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
 }
+.animate-reveal { animation: reveal-up 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
