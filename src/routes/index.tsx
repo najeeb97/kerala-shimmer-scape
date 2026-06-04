@@ -6,6 +6,7 @@ import { Marquee } from "@/components/site/Marquee";
 import { About } from "@/components/site/About";
 import { Wedding } from "@/components/site/Wedding";
 import { Family } from "@/components/site/Family";
+import { Coast } from "@/components/site/Coast";
 import { Featured } from "@/components/site/Featured";
 import { Testimonials } from "@/components/site/Testimonials";
 import { WhyUs } from "@/components/site/WhyUs";
@@ -64,6 +65,7 @@ function Index() {
       <Wedding />
       <HorizontalBridal />
       <ScrollSilk />
+      <Coast />
       <Family />
       <Featured />
       <Testimonials />
