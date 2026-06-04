@@ -26,7 +26,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 1 }}
               className="text-[11px] uppercase tracking-[0.5em] text-primary/90 mb-6"
             >
-              ⌘ Est. Chavakkad · Kerala
+              ⌘ By the Arabian Sea · Chavakkad, Kerala
             </motion.p>
 
             <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] leading-[0.95] text-ivory max-w-5xl">
