@@ -12,6 +12,11 @@ import { WhyUs } from "@/components/site/WhyUs";
 import { Instagram } from "@/components/site/Instagram";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { Preloader } from "@/components/site/Preloader";
+import { Cursor } from "@/components/site/Cursor";
+import { HorizontalBridal } from "@/components/site/HorizontalBridal";
+import { ScrollSilk } from "@/components/site/ScrollSilk";
+import { ScrollProgress } from "@/components/site/ScrollProgress";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,12 +53,17 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="relative bg-background text-foreground">
+      <Preloader />
+      <Cursor />
       <SmoothScroll />
+      <ScrollProgress />
       <Navbar />
       <Hero />
       <Marquee />
       <About />
       <Wedding />
+      <HorizontalBridal />
+      <ScrollSilk />
       <Family />
       <Featured />
       <Testimonials />
