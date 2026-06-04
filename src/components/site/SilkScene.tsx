@@ -100,18 +100,18 @@ function GoldParticles() {
 function Scene() {
   return (
     <>
-      <color attach="background" args={["#0F0F0F"]} />
-      <fog attach="fog" args={["#0F0F0F", 6, 14]} />
-      <ambientLight intensity={0.35} />
-      <directionalLight position={[5, 6, 4]} intensity={2.2} color="#F7E7CE" />
-      <pointLight position={[-4, 2, 3]} intensity={2} color="#D4AF37" />
-      <pointLight position={[4, -3, 2]} intensity={1.4} color="#C9A227" />
+      <color attach="background" args={["#FAF6EE"]} />
+      <fog attach="fog" args={["#FAF6EE", 6, 14]} />
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 6, 4]} intensity={2.4} color="#FFF6E0" />
+      <pointLight position={[-4, 2, 3]} intensity={1.6} color="#C9A227" />
+      <pointLight position={[4, -3, 2]} intensity={1.2} color="#EFE6D2" />
 
-      <Silk color="#8B0000" position={[-2.2, 0.3, -0.5]} rotation={[0.1, 0.4, -0.1]} speed={0.6} scale={1.05} />
-      <Silk color="#D4AF37" position={[0, -0.2, 0.2]} rotation={[-0.05, -0.15, 0.05]} speed={0.8} scale={1.2} />
-      <Silk color="#3B1F2B" position={[2.4, 0.4, -0.7]} rotation={[0.05, -0.5, 0.1]} speed={0.7} scale={1.05} />
+      <Silk color="#C9A227" position={[-2.2, 0.3, -0.5]} rotation={[0.1, 0.4, -0.1]} speed={0.6} scale={1.05} />
+      <Silk color="#EFE6D2" position={[0, -0.2, 0.2]} rotation={[-0.05, -0.15, 0.05]} speed={0.8} scale={1.2} />
+      <Silk color="#D4B87A" position={[2.4, 0.4, -0.7]} rotation={[0.05, -0.5, 0.1]} speed={0.7} scale={1.05} />
       <Silk color="#F7E7CE" position={[-3.5, -1.5, -1.5]} rotation={[0, 0.6, 0.2]} speed={0.5} scale={0.8} />
-      <Silk color="#5C0E1F" position={[3.6, -1.6, -1.6]} rotation={[0, -0.7, -0.2]} speed={0.55} scale={0.8} />
+      <Silk color="#B76E5A" position={[3.6, -1.6, -1.6]} rotation={[0, -0.7, -0.2]} speed={0.55} scale={0.8} />
 
       <GoldParticles />
     </>

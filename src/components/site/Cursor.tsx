@@ -53,12 +53,12 @@ export function Cursor() {
       <div
         ref={ring}
         data-hover="0"
-        className="pointer-events-none fixed top-0 left-0 z-[90] w-10 h-10 rounded-full border border-primary/60 mix-blend-difference transition-[width,height,opacity] duration-300 data-[hover=1]:w-16 data-[hover=1]:h-16 data-[hover=1]:bg-primary/15"
+        className="pointer-events-none fixed top-0 left-0 z-[90] w-10 h-10 rounded-full border border-primary/70 transition-[width,height,opacity] duration-300 data-[hover=1]:w-16 data-[hover=1]:h-16 data-[hover=1]:bg-primary/15"
         style={{ willChange: "transform" }}
       />
       <div
         ref={dot}
-        className="pointer-events-none fixed top-0 left-0 z-[91] w-1.5 h-1.5 rounded-full bg-primary mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-[91] w-1.5 h-1.5 rounded-full bg-primary"
         style={{ willChange: "transform" }}
       />
     </>
