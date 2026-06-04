@@ -13,8 +13,8 @@ export function Hero() {
       </div>
 
       {/* Vignette overlays */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.12_0.005_60/_0.8)_85%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.97_0.018_85/_0.7)_90%)]" />
 
       {/* Hero copy */}
       <div className="relative z-10 h-full flex flex-col">

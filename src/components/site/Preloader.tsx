@@ -35,7 +35,7 @@ export function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 1.1, ease: [0.85, 0, 0.15, 1] }}
-          className="fixed inset-0 z-[100] bg-onyx flex flex-col items-center justify-center"
+          className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}

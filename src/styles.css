@@ -63,52 +63,54 @@
 
 :root {
   --radius: 0.25rem;
-  /* Luxury dark canvas */
-  --background: oklch(0.14 0.005 60);
-  --foreground: oklch(0.97 0.012 80);
-  --card: oklch(0.17 0.008 60);
-  --card-foreground: oklch(0.97 0.012 80);
-  --popover: oklch(0.14 0.005 60);
-  --popover-foreground: oklch(0.97 0.012 80);
-  --primary: oklch(0.78 0.14 82); /* gold #D4AF37 */
-  --primary-foreground: oklch(0.14 0.005 60);
-  --secondary: oklch(0.22 0.01 60);
-  --secondary-foreground: oklch(0.97 0.012 80);
-  --muted: oklch(0.2 0.008 60);
-  --muted-foreground: oklch(0.72 0.02 80);
-  --accent: oklch(0.88 0.06 85); /* champagne */
-  --accent-foreground: oklch(0.14 0.005 60);
+  /* Luxury LIGHT canvas — Ivory & Gold (Bridal Morning) */
+  --background: oklch(0.97 0.018 85);     /* ivory #FAF6EE */
+  --foreground: oklch(0.20 0.012 50);     /* deep ink #1A1411 */
+  --card: oklch(0.94 0.028 85);           /* champagne card */
+  --card-foreground: oklch(0.20 0.012 50);
+  --popover: oklch(0.97 0.018 85);
+  --popover-foreground: oklch(0.20 0.012 50);
+  --primary: oklch(0.72 0.14 80);         /* gold #C9A227 */
+  --primary-foreground: oklch(0.97 0.018 85);
+  --secondary: oklch(0.92 0.03 85);
+  --secondary-foreground: oklch(0.20 0.012 50);
+  --muted: oklch(0.93 0.025 85);
+  --muted-foreground: oklch(0.42 0.02 60);
+  --accent: oklch(0.88 0.05 85);          /* champagne accent */
+  --accent-foreground: oklch(0.20 0.012 50);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.3 0.02 80 / 30%);
-  --input: oklch(0.3 0.02 80 / 40%);
-  --ring: oklch(0.78 0.14 82);
+  --border: oklch(0.55 0.06 75 / 28%);
+  --input: oklch(0.55 0.06 75 / 35%);
+  --ring: oklch(0.72 0.14 80);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.14 0.005 60);
-  --sidebar-foreground: oklch(0.97 0.012 80);
-  --sidebar-primary: oklch(0.78 0.14 82);
-  --sidebar-primary-foreground: oklch(0.14 0.005 60);
-  --sidebar-accent: oklch(0.22 0.01 60);
-  --sidebar-accent-foreground: oklch(0.97 0.012 80);
-  --sidebar-border: oklch(0.3 0.02 80 / 30%);
-  --sidebar-ring: oklch(0.78 0.14 82);
+  --sidebar: oklch(0.97 0.018 85);
+  --sidebar-foreground: oklch(0.20 0.012 50);
+  --sidebar-primary: oklch(0.72 0.14 80);
+  --sidebar-primary-foreground: oklch(0.97 0.018 85);
+  --sidebar-accent: oklch(0.92 0.03 85);
+  --sidebar-accent-foreground: oklch(0.20 0.012 50);
+  --sidebar-border: oklch(0.55 0.06 75 / 28%);
+  --sidebar-ring: oklch(0.72 0.14 80);
 
-  /* Brand tokens */
-  --gold: oklch(0.78 0.14 82);
-  --gold-deep: oklch(0.72 0.14 80);
-  --ivory: oklch(0.97 0.015 90);
-  --champagne: oklch(0.9 0.05 85);
-  --onyx: oklch(0.12 0.005 60);
+  /* Brand tokens — remapped so existing class names (text-ivory, bg-onyx)
+     stay semantic in the light theme: "ivory" = ink heading color,
+     "onyx" = ivory canvas surface. */
+  --gold: oklch(0.72 0.14 80);
+  --gold-deep: oklch(0.62 0.14 75);
+  --ivory: oklch(0.20 0.012 50);          /* now ink */
+  --champagne: oklch(0.88 0.05 85);
+  --onyx: oklch(0.97 0.018 85);           /* now ivory canvas */
 
-  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.14 85), oklch(0.7 0.14 78) 50%, oklch(0.88 0.08 88));
-  --gradient-luxury: radial-gradient(ellipse at top, oklch(0.22 0.02 70 / 60%), oklch(0.1 0.005 60) 70%);
-  --gradient-fade: linear-gradient(180deg, transparent, oklch(0.12 0.005 60) 90%);
-  --shadow-luxury: 0 30px 80px -20px oklch(0 0 0 / 60%), 0 0 0 1px oklch(0.78 0.14 82 / 15%);
-  --shadow-gold: 0 10px 40px -10px oklch(0.78 0.14 82 / 40%);
+  --gradient-gold: linear-gradient(135deg, oklch(0.78 0.14 82), oklch(0.62 0.14 75) 50%, oklch(0.82 0.10 85));
+  --gradient-luxury: radial-gradient(ellipse at top, oklch(0.93 0.04 85 / 70%), oklch(0.97 0.018 85) 70%);
+  --gradient-fade: linear-gradient(180deg, transparent, oklch(0.97 0.018 85) 90%);
+  --shadow-luxury: 0 30px 80px -20px oklch(0.30 0.03 50 / 18%), 0 0 0 1px oklch(0.72 0.14 80 / 20%);
+  --shadow-gold: 0 10px 40px -10px oklch(0.72 0.14 80 / 40%);
 }
 
 .dark {
@@ -132,8 +134,8 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.78 0.14 82 / 10%), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 110%, oklch(0.78 0.14 82 / 6%), transparent 60%);
+      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.72 0.14 80 / 12%), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 110%, oklch(0.88 0.05 85 / 35%), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -167,9 +169,9 @@
   .shadow-gold { box-shadow: var(--shadow-gold); }
 
   .glass {
-    background: oklch(0.18 0.01 70 / 55%);
+    background: oklch(0.97 0.018 85 / 65%);
     backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid oklch(0.78 0.14 82 / 18%);
+    border: 1px solid oklch(0.72 0.14 80 / 25%);
   }
 
   .hairline {
