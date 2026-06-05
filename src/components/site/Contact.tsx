@@ -213,36 +213,35 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 relative rounded-sm overflow-hidden min-h-[420px] h-full border border-primary/30 shadow-luxury"
           >
-            <TiltCard className="relative rounded-sm overflow-hidden min-h-[420px] h-full border border-primary/30 shadow-luxury">
-              <iframe
-                title="Beauty Silks Chavakkad"
-                src="https://maps.google.com/maps?q=Chavakkad%20Kerala&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                loading="lazy"
-                className="absolute inset-0 w-full h-full sepia-[0.25] contrast-110 saturate-[0.9]"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/40 via-transparent to-primary/15" />
-              <motion.div
-                aria-hidden
-                className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16"
-                animate={{ scale: [1, 1.6, 1], opacity: [0.7, 0, 0.7] }}
-                transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
-              >
-                <div className="w-full h-full rounded-full border-2 border-primary" />
-              </motion.div>
-              <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary shadow-gold" />
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="pointer-events-none absolute bottom-4 left-4 right-4 glass rounded-sm p-4"
-              >
-                <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Find us</p>
-                <p className="text-sm text-ivory">Chavakkad, Thrissur — Kerala</p>
-              </motion.div>
-            </TiltCard>
+            <iframe
+              title="Beauty Silks Chavakkad"
+              src="https://maps.google.com/maps?q=Chavakkad%20Kerala&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full"
+              style={{ filter: "contrast(1.05) saturate(0.95)" }}
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/30 via-transparent to-primary/15" />
+            <motion.div
+              aria-hidden
+              className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16"
+              animate={{ scale: [1, 1.6, 1], opacity: [0.7, 0, 0.7] }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
+            >
+              <div className="w-full h-full rounded-full border-2 border-primary" />
+            </motion.div>
+            <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary shadow-gold" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="pointer-events-none absolute bottom-4 left-4 right-4 glass rounded-sm p-4"
+            >
+              <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Find us</p>
+              <p className="text-sm text-ivory">Chavakkad, Thrissur — Kerala</p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
