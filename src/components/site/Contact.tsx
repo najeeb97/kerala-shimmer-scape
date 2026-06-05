@@ -59,7 +59,7 @@ export function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-32 md:py-44 overflow-hidden"
+      className="relative py-24 md:py-44 overflow-hidden"
     >
       {/* layered backdrop */}
       <div className="absolute inset-0 bg-gradient-luxury opacity-70" />
@@ -94,18 +94,18 @@ export function Contact() {
         />
       ))}
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <motion.div style={{ y: headlineY }} className="text-center mb-20">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+        <motion.div style={{ y: headlineY }} className="text-center mb-12 md:mb-20">
           <motion.p
             initial={{ opacity: 0, letterSpacing: "0.1em" }}
             whileInView={{ opacity: 1, letterSpacing: "0.4em" }}
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
-            className="text-[11px] uppercase text-primary mb-6"
+            className="text-[11px] uppercase text-primary mb-4 md:mb-6"
           >
             — Visit the Atelier
           </motion.p>
-          <h2 className="font-display text-5xl md:text-8xl leading-[0.95] text-ivory">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-8xl leading-[0.95] text-ivory">
             {["Step", "inside"].map((w, i) => (
               <motion.span
                 key={w}
@@ -133,7 +133,7 @@ export function Contact() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8" style={{ perspective: 1400 }}>
+        <div className="grid lg:grid-cols-5 gap-6 md:gap-8" style={{ perspective: 1400 }}>
           <motion.div
             initial={{ opacity: 0, y: 60, rotateY: -8 }}
             whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
@@ -141,8 +141,8 @@ export function Contact() {
             transition={{ duration: 1 }}
             className="lg:col-span-3"
           >
-            <TiltCard className="glass rounded-sm p-10 md:p-14 shadow-luxury">
-              <div className="grid sm:grid-cols-2 gap-10">
+            <TiltCard className="glass rounded-sm p-6 sm:p-10 md:p-14 shadow-luxury">
+              <div className="grid sm:grid-cols-2 gap-8 md:gap-10">
                 {[
                   {
                     label: "Flagship Store",
@@ -166,7 +166,7 @@ export function Contact() {
                     transition={{ delay: 0.15 + i * 0.1, duration: 0.8 }}
                   >
                     <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-3">{item.label}</div>
-                    <p className={`${item.display ? "font-display text-2xl" : "font-serif text-lg"} text-ivory/90 leading-snug`}>
+                    <p className={`${item.display ? "font-display text-xl md:text-2xl" : "font-serif text-base md:text-lg"} text-ivory/90 leading-snug`}>
                       {item.body}
                     </p>
                   </motion.div>
