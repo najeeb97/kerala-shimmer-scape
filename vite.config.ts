@@ -14,6 +14,6 @@ export default defineConfig({
   },
   // Build for Vercel instead of the default Cloudflare Workers target
   nitro: {
-    preset: "vercel",
+    preset: "netlify",
   },
 });
