@@ -12,8 +12,14 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Static output works on both Netlify and Vercel when they publish the `dist` folder.
+  // Netlify needs the SSR function in `.netlify/functions-internal` and public assets in `dist`.
+  // The Lovable defaults target a different hosting layout, so set these explicitly.
   nitro: {
     preset: "netlify",
+    output: {
+      dir: ".netlify/functions-internal",
+      serverDir: ".netlify/functions-internal/server",
+      publicDir: "dist",
+    },
   },
 });
