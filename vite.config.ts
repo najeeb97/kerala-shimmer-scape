@@ -12,8 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Build for Vercel instead of the default Cloudflare Workers target
+  // Static output works on both Netlify and Vercel when they publish the `dist` folder.
   nitro: {
-    preset: "netlify",
+    preset: "netlify-static",
   },
 });
