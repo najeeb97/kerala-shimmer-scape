@@ -14,6 +14,6 @@ export default defineConfig({
   },
   // Static output works on both Netlify and Vercel when they publish the `dist` folder.
   nitro: {
-    preset: "netlify-static",
+    preset: "netlify",
   },
 });
