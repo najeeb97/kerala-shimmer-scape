@@ -100,7 +100,7 @@ export function Footer() {
                       href={href}
                       whileHover={{ x: 6 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      className="inline-flex items-center gap-2 hover:text-primary"
+                      className="inline-flex items-center gap-2 hover:text-[#D4AF37]"
                     >
                       <span className="w-0 group-hover:w-4 h-px bg-primary transition-all" />
                       {label}
