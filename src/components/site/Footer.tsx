@@ -73,7 +73,7 @@ export function Footer() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.08 }}
-                  className="px-4 py-2 rounded-full border border-primary/30 text-[10px] uppercase tracking-[0.3em] text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="px-4 py-2 rounded-full border border-[#D4AF37]/40 text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1a0f0a] transition-colors"
                 >
                   {s}
                 </motion.a>
