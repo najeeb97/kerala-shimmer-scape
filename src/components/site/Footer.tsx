@@ -11,13 +11,29 @@ export function Footer() {
   return (
     <footer
       ref={ref}
-      className="relative border-t border-primary/15 bg-onyx overflow-hidden"
+      className="relative border-t border-[#D4AF37]/20 overflow-hidden bg-[#0a0604] text-[#F7E7CE]"
     >
       {/* animated horizon glow */}
       <motion.div
         style={{ opacity: glowOpacity }}
-        className="pointer-events-none absolute -bottom-1/3 left-1/2 -translate-x-1/2 w-[140%] h-[80vh] rounded-full bg-[radial-gradient(ellipse_at_center,oklch(0.78_0.14_82/0.35),transparent_60%)] blur-2xl"
+        className="pointer-events-none absolute -bottom-1/3 left-1/2 -translate-x-1/2 w-[140%] h-[80vh] rounded-full blur-2xl"
+      >
+        <div className="w-full h-full rounded-full" style={{ background: "radial-gradient(ellipse at center, rgba(212,175,55,0.45), transparent 60%)" }} />
+      </motion.div>
+
+      {/* warm corner glows */}
+      <div className="pointer-events-none absolute -top-32 -right-32 h-[460px] w-[460px] rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, #D4AF37 0%, transparent 70%)" }} />
+      <div className="pointer-events-none absolute -bottom-40 -left-32 h-[520px] w-[520px] rounded-full opacity-25 blur-3xl" style={{ background: "radial-gradient(circle, #B76E5A 0%, transparent 70%)" }} />
+
+      {/* grain */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+        }}
       />
+
 
       {/* drifting gold particles */}
       {Array.from({ length: 10 }).map((_, i) => (
