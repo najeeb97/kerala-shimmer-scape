@@ -36,13 +36,13 @@ export function Footer() {
 
 
       {/* drifting gold particles */}
-      {Array.from({ length: 10 }).map((_, i) => (
+      {Array.from({ length: 14 }).map((_, i) => (
         <motion.span
           key={i}
           aria-hidden
-          className="absolute w-1 h-1 rounded-full bg-primary/60"
-          style={{ left: `${(i * 47) % 100}%`, bottom: `${(i * 23) % 60}%` }}
-          animate={{ y: [0, -60, 0], opacity: [0.1, 0.8, 0.1] }}
+          className="absolute w-1 h-1 rounded-full"
+          style={{ left: `${(i * 47) % 100}%`, bottom: `${(i * 23) % 60}%`, background: "#F7C76A" }}
+          animate={{ y: [0, -80, 0], opacity: [0.1, 0.9, 0.1] }}
           transition={{ duration: 6 + (i % 3), repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
         />
       ))}
