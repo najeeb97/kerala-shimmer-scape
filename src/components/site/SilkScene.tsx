@@ -97,6 +97,29 @@ function GoldParticles() {
   );
 }
 
+function GoldRing() {
+  const ref = useRef<THREE.Mesh>(null);
+  useFrame((state) => {
+    if (!ref.current) return;
+    const t = state.clock.getElapsedTime();
+    ref.current.rotation.x = t * 0.15;
+    ref.current.rotation.y = t * 0.2;
+  });
+  return (
+    <mesh ref={ref} position={[0, 0.2, -2.5]} scale={1.8}>
+      <torusGeometry args={[1.2, 0.04, 32, 200]} />
+      <meshPhysicalMaterial
+        color="#D4AF37"
+        metalness={1}
+        roughness={0.15}
+        clearcoat={1}
+        emissive={new THREE.Color("#D4AF37")}
+        emissiveIntensity={0.4}
+      />
+    </mesh>
+  );
+}
+
 function Scene() {
   return (
     <>
@@ -107,6 +130,7 @@ function Scene() {
       <pointLight position={[-4, 2, 3]} intensity={1.6} color="#C9A227" />
       <pointLight position={[4, -3, 2]} intensity={1.2} color="#EFE6D2" />
 
+      <GoldRing />
       <Silk color="#C9A227" position={[-2.2, 0.3, -0.5]} rotation={[0.1, 0.4, -0.1]} speed={0.6} scale={1.05} />
       <Silk color="#EFE6D2" position={[0, -0.2, 0.2]} rotation={[-0.05, -0.15, 0.05]} speed={0.8} scale={1.2} />
       <Silk color="#D4B87A" position={[2.4, 0.4, -0.7]} rotation={[0.05, -0.5, 0.1]} speed={0.7} scale={1.05} />
