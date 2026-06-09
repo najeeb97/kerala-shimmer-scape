@@ -180,12 +180,12 @@
   }
 
   .marquee-track {
-    animation: marquee 18s linear infinite;
+    animation: marquee 9s linear infinite;
   }
 
   @media (max-width: 768px) {
     .marquee-track {
-      animation-duration: 12s;
+      animation-duration: 6s;
     }
   }
 
