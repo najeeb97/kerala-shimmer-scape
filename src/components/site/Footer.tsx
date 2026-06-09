@@ -92,8 +92,8 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.1 + ci * 0.08 }}
             >
-              <div className="text-[11px] uppercase tracking-[0.3em] text-primary mb-4">{col.title}</div>
-              <ul className="space-y-2 text-sm text-foreground/70">
+              <div className="text-[11px] uppercase tracking-[0.3em] text-[#D4AF37] mb-4">{col.title}</div>
+              <ul className="space-y-2 text-sm text-[#F7E7CE]/70">
                 {col.links.map(([label, href], i) => (
                   <li key={label}>
                     <motion.a
