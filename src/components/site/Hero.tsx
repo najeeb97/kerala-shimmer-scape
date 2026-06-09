@@ -65,13 +65,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 1 }}
-              className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#D4AF37]/40 bg-black/30 backdrop-blur-md px-4 py-1.5"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
-              <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[#F7E7CE]/90">
-                Royal Midnight · Chavakkad, Kerala
-              </p>
-            </motion.div>
+              className="mb-6"
+            />
+
 
             <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-8xl lg:text-[9rem] leading-[0.95] max-w-5xl text-[#F7E7CE]">
               {["Threads", "of", "Heritage,"].map((w, i) => (

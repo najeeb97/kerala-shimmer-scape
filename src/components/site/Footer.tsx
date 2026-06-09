@@ -11,22 +11,38 @@ export function Footer() {
   return (
     <footer
       ref={ref}
-      className="relative border-t border-primary/15 bg-onyx overflow-hidden"
+      className="relative border-t border-[#D4AF37]/20 overflow-hidden bg-[#0a0604] text-[#F7E7CE]"
     >
       {/* animated horizon glow */}
       <motion.div
         style={{ opacity: glowOpacity }}
-        className="pointer-events-none absolute -bottom-1/3 left-1/2 -translate-x-1/2 w-[140%] h-[80vh] rounded-full bg-[radial-gradient(ellipse_at_center,oklch(0.78_0.14_82/0.35),transparent_60%)] blur-2xl"
+        className="pointer-events-none absolute -bottom-1/3 left-1/2 -translate-x-1/2 w-[140%] h-[80vh] rounded-full blur-2xl"
+      >
+        <div className="w-full h-full rounded-full" style={{ background: "radial-gradient(ellipse at center, rgba(212,175,55,0.45), transparent 60%)" }} />
+      </motion.div>
+
+      {/* warm corner glows */}
+      <div className="pointer-events-none absolute -top-32 -right-32 h-[460px] w-[460px] rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, #D4AF37 0%, transparent 70%)" }} />
+      <div className="pointer-events-none absolute -bottom-40 -left-32 h-[520px] w-[520px] rounded-full opacity-25 blur-3xl" style={{ background: "radial-gradient(circle, #B76E5A 0%, transparent 70%)" }} />
+
+      {/* grain */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+        }}
       />
 
+
       {/* drifting gold particles */}
-      {Array.from({ length: 10 }).map((_, i) => (
+      {Array.from({ length: 14 }).map((_, i) => (
         <motion.span
           key={i}
           aria-hidden
-          className="absolute w-1 h-1 rounded-full bg-primary/60"
-          style={{ left: `${(i * 47) % 100}%`, bottom: `${(i * 23) % 60}%` }}
-          animate={{ y: [0, -60, 0], opacity: [0.1, 0.8, 0.1] }}
+          className="absolute w-1 h-1 rounded-full"
+          style={{ left: `${(i * 47) % 100}%`, bottom: `${(i * 23) % 60}%`, background: "#F7C76A" }}
+          animate={{ y: [0, -80, 0], opacity: [0.1, 0.9, 0.1] }}
           transition={{ duration: 6 + (i % 3), repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
         />
       ))}
@@ -41,7 +57,7 @@ export function Footer() {
             className="md:col-span-2"
           >
             <div className="font-display text-3xl text-gradient-gold mb-3">Beauty Silks</div>
-            <p className="text-sm text-foreground/65 max-w-sm font-light leading-relaxed">
+            <p className="text-sm text-[#F7E7CE]/70 max-w-sm font-light leading-relaxed">
               Exclusive wedding collections in a complete family shop —
               woven with heritage from Chavakkad, by the Arabian Sea.
             </p>
@@ -57,7 +73,7 @@ export function Footer() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.08 }}
-                  className="px-4 py-2 rounded-full border border-primary/30 text-[10px] uppercase tracking-[0.3em] text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="px-4 py-2 rounded-full border border-[#D4AF37]/40 text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1a0f0a] transition-colors"
                 >
                   {s}
                 </motion.a>
@@ -76,15 +92,15 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.1 + ci * 0.08 }}
             >
-              <div className="text-[11px] uppercase tracking-[0.3em] text-primary mb-4">{col.title}</div>
-              <ul className="space-y-2 text-sm text-foreground/70">
+              <div className="text-[11px] uppercase tracking-[0.3em] text-[#D4AF37] mb-4">{col.title}</div>
+              <ul className="space-y-2 text-sm text-[#F7E7CE]/70">
                 {col.links.map(([label, href], i) => (
                   <li key={label}>
                     <motion.a
                       href={href}
                       whileHover={{ x: 6 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      className="inline-flex items-center gap-2 hover:text-primary"
+                      className="inline-flex items-center gap-2 hover:text-[#D4AF37]"
                     >
                       <span className="w-0 group-hover:w-4 h-px bg-primary transition-all" />
                       {label}
@@ -114,7 +130,7 @@ export function Footer() {
           />
         </div>
 
-        <div className="mt-10 pt-8 border-t border-primary/10 flex flex-wrap justify-between items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="mt-10 pt-8 border-t border-[#D4AF37]/15 flex flex-wrap justify-between items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-[#F7E7CE]/50">
           <span>© {new Date().getFullYear()} Beauty Silks · Chavakkad, Kerala</span>
           <motion.span
             animate={{ opacity: [0.4, 1, 0.4] }}
