@@ -57,7 +57,7 @@ export function Footer() {
             className="md:col-span-2"
           >
             <div className="font-display text-3xl text-gradient-gold mb-3">Beauty Silks</div>
-            <p className="text-sm text-foreground/65 max-w-sm font-light leading-relaxed">
+            <p className="text-sm text-[#F7E7CE]/70 max-w-sm font-light leading-relaxed">
               Exclusive wedding collections in a complete family shop —
               woven with heritage from Chavakkad, by the Arabian Sea.
             </p>
