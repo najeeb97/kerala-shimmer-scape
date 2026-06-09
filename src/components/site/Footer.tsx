@@ -130,7 +130,7 @@ export function Footer() {
           />
         </div>
 
-        <div className="mt-10 pt-8 border-t border-primary/10 flex flex-wrap justify-between items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="mt-10 pt-8 border-t border-[#D4AF37]/15 flex flex-wrap justify-between items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-[#F7E7CE]/50">
           <span>© {new Date().getFullYear()} Beauty Silks · Chavakkad, Kerala</span>
           <motion.span
             animate={{ opacity: [0.4, 1, 0.4] }}
