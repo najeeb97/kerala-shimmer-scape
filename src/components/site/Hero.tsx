@@ -7,6 +7,8 @@ import { useLang } from "@/lib/i18n";
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
+  const { t, lang } = useLang();
+
   useEffect(() => setMounted(true), []);
 
   return (
