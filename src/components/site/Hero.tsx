@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { RoyalScene } from "./RoyalScene";
 import { useEffect, useState } from "react";
+import { useLang } from "@/lib/i18n";
+
+
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
