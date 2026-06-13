@@ -34,7 +34,7 @@ export function Coast() {
               className="text-[11px] uppercase tracking-[0.4em] text-primary mb-6 flex items-center gap-3"
             >
               <span className="inline-block w-8 h-px bg-primary" />
-              — By the Arabian Sea
+              {t("coastEyebrow")}
             </motion.p>
 
             <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-ivory">
@@ -43,23 +43,15 @@ export function Coast() {
             </h2>
 
             <div className="mt-10 space-y-6 max-w-lg text-foreground/75 font-light leading-relaxed">
-              <p>
-                For four decades, Beauty Silks has stood a short walk from the
-                gold-lit shores of <span className="text-foreground font-normal">Chavakkad Beach</span> — where
-                the Arabian Sea writes its own kasavu border across the sand each evening.
-              </p>
-              <p>
-                The light here is different. Softer at dawn, molten at dusk. It is
-                the same light our weavers chase into every drape — silks that
-                shimmer like sea-foam, golds that hold the colour of a Malabar sunset.
-              </p>
+              <p>{t("coastP1")}</p>
+              <p>{t("coastP2")}</p>
             </div>
 
             <div className="mt-12 grid grid-cols-3 gap-px bg-primary/15 border border-primary/15 max-w-md">
               {[
-                { n: "2 min", l: "From the beach" },
-                { n: "40 yrs", l: "On this coast" },
-                { n: "1 sea", l: "One heritage" },
+                { n: "2 min", l: t("coastStat1") },
+                { n: "40 yrs", l: t("coastStat2") },
+                { n: "1 sea", l: t("coastStat3") },
               ].map((s) => (
                 <div key={s.l} className="bg-background p-5">
                   <div className="font-display text-2xl text-gradient-gold">{s.n}</div>
