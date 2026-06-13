@@ -5,6 +5,8 @@ import banarasi from "@/assets/product-banarasi.jpg";
 import kasavu from "@/assets/product-kasavu.jpg";
 import ivoryLehenga from "@/assets/bridal-ivory-lehenga.jpg";
 import sherwani from "@/assets/product-sherwani.jpg";
+import { useLang } from "@/lib/i18n";
+
 
 const slides = [
   { tag: "01 · Mandap", title: "Crimson Kanjivaram", sub: "Pure mulberry silk · 24k zari", image: kanjivaram },
@@ -15,6 +17,7 @@ const slides = [
 ];
 
 export function HorizontalBridal() {
+  const { t } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const x = useTransform(scrollYProgress, [0, 1], ["2%", "-82%"]);
@@ -25,13 +28,13 @@ export function HorizontalBridal() {
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-10 pt-24 pb-8 flex items-end justify-between">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4">— Bridal Studio</p>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4">{t("bridalStudio")}</p>
             <h2 className="font-display text-4xl md:text-6xl text-ivory leading-[0.95]">
               The drape <span className="italic font-serif text-gradient-gold">scrolls with you.</span>
             </h2>
           </div>
           <div className="hidden md:block text-[10px] uppercase tracking-[0.4em] text-foreground/50">
-            Scroll →
+            {t("scroll")}
           </div>
         </div>
 
@@ -60,7 +63,7 @@ export function HorizontalBridal() {
                   <h3 className="font-display text-3xl md:text-5xl text-ivory mb-3">{s.title}</h3>
                   <p className="text-sm text-ivory/75 font-light">{s.sub}</p>
                   <div className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-primary">
-                    Enquire <span>→</span>
+                    {t("enquire")} <span>→</span>
                   </div>
                 </div>
               </article>

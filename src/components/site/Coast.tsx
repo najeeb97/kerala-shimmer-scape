@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useLang } from "@/lib/i18n";
 
 export function Coast() {
+  const { t } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const wave1 = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
