@@ -73,7 +73,7 @@ export function Wedding() {
                 </h3>
                 <p className="text-xs sm:text-sm text-ivory/75 max-w-md font-light leading-relaxed">{c.note}</p>
                 <div className="mt-4 md:mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-primary">
-                  Discover <span className="transition-transform duration-500 group-hover:translate-x-2">→</span>
+                  {t("discover")} <span className="transition-transform duration-500 group-hover:translate-x-2">→</span>
                 </div>
               </div>
             </motion.article>
