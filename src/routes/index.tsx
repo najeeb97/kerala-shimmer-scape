@@ -55,7 +55,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <LanguageProvider>
     <main className="relative bg-background text-foreground">
+
       <Preloader />
       <Cursor />
       <SmoothScroll />
