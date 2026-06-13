@@ -115,8 +115,8 @@ export function Coast() {
               />
 
               <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
-                <span className="text-[10px] uppercase tracking-[0.4em] text-foreground/70">Chavakkad · 10.5953°N</span>
-                <span className="text-[10px] uppercase tracking-[0.4em] text-foreground/70">Arabian Sea</span>
+                <span className="text-[10px] uppercase tracking-[0.4em] text-foreground/70">{t("chavakkad")} · 10.5953°N</span>
+                <span className="text-[10px] uppercase tracking-[0.4em] text-foreground/70">{t("arabianSea")}</span>
               </div>
 
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
