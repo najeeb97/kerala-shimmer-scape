@@ -78,5 +78,7 @@ function Index() {
       <Contact />
       <Footer />
     </main>
+    </LanguageProvider>
   );
 }
+
