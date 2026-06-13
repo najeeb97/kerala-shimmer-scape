@@ -7,7 +7,7 @@ import { useLang } from "@/lib/i18n";
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
-  const { t, lang } = useLang();
+  const { t } = useLang();
 
   useEffect(() => setMounted(true), []);
 
@@ -75,9 +75,9 @@ export function Hero() {
 
 
             <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-8xl lg:text-[9rem] leading-[0.95] max-w-5xl text-[#F7E7CE]">
-              {[t("heroH1a"), t("heroH1b"), t("heroH1c")].filter(Boolean).map((w, i) => (
+              {["Threads", "of", "Heritage,"].map((w, i) => (
                 <motion.span
-                  key={`${lang}-${i}`}
+                  key={i}
                   initial={{ y: 120, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4 + i * 0.12, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
@@ -88,7 +88,6 @@ export function Hero() {
               ))}
               <br />
               <motion.span
-                key={`${lang}-tail`}
                 initial={{ y: 120, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.85, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -101,7 +100,7 @@ export function Hero() {
                   color: "transparent",
                 }}
               >
-                {t("heroH1d")}
+                woven for dreams.
               </motion.span>
             </h1>
 

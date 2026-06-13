@@ -2,6 +2,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { useLang } from "@/lib/i18n";
+
 
 function Ribbon({ progress }: { progress: { get: () => number } }) {
   const ref = useRef<THREE.Mesh>(null);
@@ -46,6 +48,7 @@ function Ribbon({ progress }: { progress: { get: () => number } }) {
 }
 
 export function ScrollSilk() {
+  const { t } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const opacityTitle = useTransform(scrollYProgress, [0.1, 0.4, 0.7, 0.95], [0, 1, 1, 0]);
@@ -74,12 +77,12 @@ export function ScrollSilk() {
           className="absolute inset-0 flex items-center"
         >
           <div className="mx-auto max-w-7xl w-full px-6 lg:px-10">
-            <p className="text-[11px] uppercase tracking-[0.5em] text-primary mb-6">— Heritage in Motion</p>
+            <p className="text-[11px] uppercase tracking-[0.5em] text-primary mb-6">{t("heritageMotion")}</p>
             <h2 className="font-display text-5xl md:text-8xl text-ivory leading-[0.95] max-w-4xl">
               Every drape is a <span className="italic font-serif text-gradient-gold">love letter</span> from the loom.
             </h2>
             <p className="mt-8 max-w-md text-foreground/70 font-light">
-              Four decades of master weavers, traced into every centimetre of silk.
+              {t("silkSub")}
             </p>
           </div>
         </motion.div>

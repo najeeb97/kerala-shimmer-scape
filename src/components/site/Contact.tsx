@@ -1,5 +1,15 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef, MouseEvent } from "react";
+import { useLang } from "@/lib/i18n";
+
+const nl2br = (s: string) =>
+  s.split("\n").map((line, i, arr) => (
+    <span key={i}>
+      {line}
+      {i < arr.length - 1 ? <br /> : null}
+    </span>
+  ));
+
 
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,6 +58,7 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 }
 
 export function Contact() {
+  const { t } = useLang();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
   const orbY = useTransform(scrollYProgress, [0, 1], [-80, 80]);
@@ -103,7 +114,7 @@ export function Contact() {
             transition={{ duration: 1.2 }}
             className="text-[11px] uppercase text-primary mb-4 md:mb-6"
           >
-            — Visit the Atelier
+            {t("visitEyebrow")}
           </motion.p>
           <h2 className="font-display text-4xl sm:text-6xl md:text-8xl leading-[0.95] text-ivory">
             {["Step", "inside"].map((w, i) => (
@@ -145,21 +156,21 @@ export function Contact() {
               <div className="grid sm:grid-cols-2 gap-8 md:gap-10">
                 {[
                   {
-                    label: "Flagship Store",
-                    body: <>Beauty Silks<br />Main Road, Chavakkad<br />Thrissur, Kerala 680506</>,
+                    label: t("flagship"),
+                    body: nl2br(t("flagshipBody")),
                     display: true,
                   },
                   {
-                    label: "Hours",
-                    body: <>Mon — Sat · 9:30 AM to 9:00 PM<br />Sunday · 10:00 AM to 8:00 PM<br />Bridal studio by appointment</>,
+                    label: t("hours"),
+                    body: nl2br(t("hoursBody")),
                   },
                   {
-                    label: "Connect",
-                    body: <>+91 98470 00000<br />hello@beautysilks.in<br />@beautysilks.chavakkad</>,
+                    label: t("connect"),
+                    body: nl2br(t("connectBody")),
                   },
                 ].map((item, i) => (
                   <motion.div
-                    key={item.label}
+                    key={typeof item.label === "string" ? item.label : i}
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -185,7 +196,7 @@ export function Contact() {
                     whileTap={{ scale: 0.98 }}
                     className="group relative overflow-hidden inline-flex items-center justify-center gap-3 bg-gradient-gold text-primary-foreground px-6 py-4 rounded-full text-[12px] uppercase tracking-[0.3em] shadow-gold transition-all"
                   >
-                    <span className="relative z-10">Call the Atelier</span>
+                    <span className="relative z-10">{t("callAtelier")}</span>
                     <motion.span
                       aria-hidden
                       className="absolute inset-0 bg-[linear-gradient(110deg,transparent,oklch(1_0_0/0.4),transparent)]"
@@ -201,7 +212,7 @@ export function Contact() {
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-3 border border-primary/50 text-primary px-6 py-4 rounded-full text-[12px] uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition-all"
                   >
-                    Get Directions
+                    {t("getDirections")}
                   </motion.a>
                 </motion.div>
               </div>
@@ -239,8 +250,8 @@ export function Contact() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="pointer-events-none absolute bottom-4 left-4 right-4 glass rounded-sm p-4"
             >
-              <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Find us</p>
-              <p className="text-sm text-ivory">Chavakkad, Thrissur — Kerala</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">{t("findUs")}</p>
+              <p className="text-sm text-ivory">{t("findUsBody")}</p>
             </motion.div>
           </motion.div>
         </div>

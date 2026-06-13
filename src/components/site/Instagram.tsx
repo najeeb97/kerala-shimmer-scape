@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLang } from "@/lib/i18n";
 import mandap from "@/assets/wedding-mandap.jpg";
 import reception from "@/assets/wedding-reception.jpg";
 import kasavu from "@/assets/product-kasavu.jpg";
@@ -16,6 +17,7 @@ const tiles = [
 ];
 
 export function Instagram() {
+  const { t } = useLang();
   return (
     <section className="relative py-24 md:py-44">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
@@ -27,7 +29,7 @@ export function Instagram() {
             </h2>
           </div>
           <a href="#" className="text-[11px] uppercase tracking-[0.3em] text-primary border-b border-primary/40 pb-1">
-            Follow on Instagram →
+            {t("followInsta")}
           </a>
         </div>
 

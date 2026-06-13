@@ -4,35 +4,17 @@ import mandap from "@/assets/wedding-mandap.jpg";
 import reception from "@/assets/wedding-reception.jpg";
 import atelier from "@/assets/wedding-atelier.jpg";
 import groom from "@/assets/wedding-groom.jpg";
+import { useLang } from "@/lib/i18n";
 
-const cards = [
-  {
-    tag: "Bridal Sarees",
-    title: "The Mandap Edit",
-    note: "Hand-zardosi Kanjivarams, temple-border silks, ivory korvai.",
-    image: mandap,
-  },
-  {
-    tag: "Wedding Wear",
-    title: "Reception Couture",
-    note: "Sculpted lehengas, draped gowns and sheer fantasies in gold.",
-    image: reception,
-  },
-  {
-    tag: "Designer Atelier",
-    title: "House Signatures",
-    note: "Limited pieces from the Beauty Silks design studio.",
-    image: atelier,
-  },
-  {
-    tag: "Groom Collections",
-    title: "Sherwani & Mundu",
-    note: "Kasavu mundu, Jodhpuri sherwanis, bandhgalas tailored on premise.",
-    image: groom,
-  },
-];
 
 export function Wedding() {
+  const { t } = useLang();
+  const cards = [
+    { tag: t("weddingCardTag1"), title: "The Mandap Edit", note: t("weddingCardNote1"), image: mandap },
+    { tag: t("weddingCardTag2"), title: "Reception Couture", note: t("weddingCardNote2"), image: reception },
+    { tag: t("weddingCardTag3"), title: "House Signatures", note: t("weddingCardNote3"), image: atelier },
+    { tag: t("weddingCardTag4"), title: "Sherwani & Mundu", note: t("weddingCardNote4"), image: groom },
+  ];
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
@@ -46,15 +28,14 @@ export function Wedding() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
           <div className="max-w-2xl">
-            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4 md:mb-6">— The Wedding House</p>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4 md:mb-6">{t("weddingEyebrow")}</p>
             <h2 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[0.95] text-ivory">
               Couture for the<br />
               <span className="italic font-serif text-gradient-gold">most sacred day.</span>
             </h2>
           </div>
           <p className="max-w-sm text-foreground/65 font-light text-sm md:text-base">
-            From the bride's first drape to the groom's mundu — a complete
-            wedding wardrobe, curated under one roof.
+            {t("weddingDesc")}
           </p>
         </div>
 
@@ -92,7 +73,7 @@ export function Wedding() {
                 </h3>
                 <p className="text-xs sm:text-sm text-ivory/75 max-w-md font-light leading-relaxed">{c.note}</p>
                 <div className="mt-4 md:mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-primary">
-                  Discover <span className="transition-transform duration-500 group-hover:translate-x-2">→</span>
+                  {t("discover")} <span className="transition-transform duration-500 group-hover:translate-x-2">→</span>
                 </div>
               </div>
             </motion.article>
