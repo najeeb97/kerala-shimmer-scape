@@ -187,10 +187,11 @@ export function Hero() {
           className="border-t border-[#D4AF37]/20 bg-black/40 backdrop-blur-xl"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 py-4 sm:py-5 flex flex-wrap items-center justify-between gap-3 text-[9px] sm:text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#F7E7CE]/70">
-            <span>· 40+ Years of Trust</span>
-            <span className="hidden sm:inline">· Kanjivaram · Banarasi · Kerala Kasavu</span>
-            <span>· Bridal Studio by Appointment</span>
-            <span className="text-[#D4AF37]">Scroll ↓</span>
+            <span>{t("tickerTrust")}</span>
+            <span className="hidden sm:inline">{t("tickerWeaves")}</span>
+            <span>{t("tickerStudio")}</span>
+            <span className="text-[#D4AF37]">{t("tickerScroll")}</span>
+
           </div>
         </motion.div>
       </div>
