@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useLang } from "@/lib/i18n";
 
 export function Footer() {
+  const { t } = useLang();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
   const wordmarkY = useTransform(scrollYProgress, [0, 1], [80, -20]);
@@ -58,8 +60,7 @@ export function Footer() {
           >
             <div className="font-display text-3xl text-gradient-gold mb-3">Beauty Silks</div>
             <p className="text-sm text-[#F7E7CE]/70 max-w-sm font-light leading-relaxed">
-              Exclusive wedding collections in a complete family shop —
-              woven with heritage from Chavakkad, by the Arabian Sea.
+              {t("footerTagline")}
             </p>
 
             <div className="mt-6 flex items-center gap-3">
@@ -82,8 +83,8 @@ export function Footer() {
           </motion.div>
 
           {[
-            { title: "Shop", links: [["Bridal Sarees", "#wedding"], ["Groom Collections", "#wedding"], ["Family Fashion", "#family"], ["Designer Atelier", "#collections"]] },
-            { title: "House", links: [["Heritage", "#about"], ["Visit", "#contact"], ["Bridal Studio", "tel:+919847000000"], ["Instagram", "#"]] },
+            { title: t("footerColShop"), links: [[t("footerBridalSarees"), "#wedding"], [t("footerGroom"), "#wedding"], [t("footerFamily"), "#family"], [t("footerDesigner"), "#collections"]] as [string, string][] },
+            { title: t("footerColHouse"), links: [[t("footerHeritage"), "#about"], [t("footerVisit"), "#contact"], [t("footerBridalStudio"), "tel:+919847000000"], [t("footerInstagram"), "#"]] as [string, string][] },
           ].map((col, ci) => (
             <motion.div
               key={col.title}
@@ -131,12 +132,12 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-8 border-t border-[#D4AF37]/15 flex flex-wrap justify-between items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-[#F7E7CE]/50">
-          <span>© {new Date().getFullYear()} Beauty Silks · Chavakkad, Kerala</span>
+          <span>© {new Date().getFullYear()} {t("footerCopy")}</span>
           <motion.span
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            Crafted with heritage
+            {t("footerCrafted")}
           </motion.span>
         </div>
       </div>
