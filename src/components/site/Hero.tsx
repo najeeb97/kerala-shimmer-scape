@@ -132,14 +132,15 @@ export function Hero() {
                   boxShadow: "0 10px 40px -10px rgba(212,175,55,0.5)",
                 }}
               >
-                Explore Bridal
+                {t("heroCtaBridal")}
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
               <a
                 href="#collections"
                 className="inline-flex items-center gap-3 text-[11px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#F7E7CE]/85 border-b border-[#D4AF37]/50 pb-1 hover:text-[#D4AF37] transition-colors"
               >
-                View Collections
+                {t("heroCtaCollections")}
+
               </a>
             </motion.div>
 
