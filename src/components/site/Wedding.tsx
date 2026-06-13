@@ -4,35 +4,17 @@ import mandap from "@/assets/wedding-mandap.jpg";
 import reception from "@/assets/wedding-reception.jpg";
 import atelier from "@/assets/wedding-atelier.jpg";
 import groom from "@/assets/wedding-groom.jpg";
+import { useLang } from "@/lib/i18n";
 
-const cards = [
-  {
-    tag: "Bridal Sarees",
-    title: "The Mandap Edit",
-    note: "Hand-zardosi Kanjivarams, temple-border silks, ivory korvai.",
-    image: mandap,
-  },
-  {
-    tag: "Wedding Wear",
-    title: "Reception Couture",
-    note: "Sculpted lehengas, draped gowns and sheer fantasies in gold.",
-    image: reception,
-  },
-  {
-    tag: "Designer Atelier",
-    title: "House Signatures",
-    note: "Limited pieces from the Beauty Silks design studio.",
-    image: atelier,
-  },
-  {
-    tag: "Groom Collections",
-    title: "Sherwani & Mundu",
-    note: "Kasavu mundu, Jodhpuri sherwanis, bandhgalas tailored on premise.",
-    image: groom,
-  },
-];
 
 export function Wedding() {
+  const { t } = useLang();
+  const cards = [
+    { tag: t("weddingCardTag1"), title: "The Mandap Edit", note: t("weddingCardNote1"), image: mandap },
+    { tag: t("weddingCardTag2"), title: "Reception Couture", note: t("weddingCardNote2"), image: reception },
+    { tag: t("weddingCardTag3"), title: "House Signatures", note: t("weddingCardNote3"), image: atelier },
+    { tag: t("weddingCardTag4"), title: "Sherwani & Mundu", note: t("weddingCardNote4"), image: groom },
+  ];
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [80, -80]);

@@ -1,20 +1,21 @@
 import { motion } from "framer-motion";
-
-const cats = [
-  { name: "Women", line: "Sarees · Kurtas · Lehengas", count: "1,200+" },
-  { name: "Men", line: "Mundu · Shirts · Sherwanis", count: "800+" },
-  { name: "Kids", line: "Festive · Casual · Wedding", count: "600+" },
-  { name: "Casual", line: "Daily · Office · Resort", count: "950+" },
-  { name: "Festive", line: "Onam · Eid · Diwali", count: "500+" },
-  { name: "Bridal", line: "By appointment only", count: "Atelier" },
-];
+import { useLang } from "@/lib/i18n";
 
 export function Family() {
+  const { t } = useLang();
+  const cats = [
+    { name: t("catWomen"), line: t("catWomenL"), count: "1,200+" },
+    { name: t("catMen"), line: t("catMenL"), count: "800+" },
+    { name: t("catKids"), line: t("catKidsL"), count: "600+" },
+    { name: t("catCasual"), line: t("catCasualL"), count: "950+" },
+    { name: t("catFestive"), line: t("catFestiveL"), count: "500+" },
+    { name: t("catBridal"), line: t("catBridalL"), count: "Atelier" },
+  ];
   return (
     <section id="family" className="relative py-32 md:py-44 bg-gradient-to-b from-background via-card/40 to-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center mb-20">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-6">— A Complete Family Shop</p>
+          <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-6">{t("familyEyebrow")}</p>
           <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-ivory">
             One roof.<br />
             <span className="italic font-serif text-gradient-gold">Every celebration.</span>
@@ -43,7 +44,7 @@ export function Family() {
                 <p className="text-sm text-foreground/60 font-light">{c.line}</p>
                 <div className="mt-10 h-px bg-gradient-to-r from-primary/40 via-primary/20 to-transparent" />
                 <div className="mt-4 text-[11px] uppercase tracking-[0.3em] text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-500">
-                  Browse →
+                  {t("browse")}
                 </div>
               </div>
             </motion.div>
