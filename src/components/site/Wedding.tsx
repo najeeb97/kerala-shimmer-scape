@@ -28,15 +28,14 @@ export function Wedding() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
           <div className="max-w-2xl">
-            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4 md:mb-6">— The Wedding House</p>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4 md:mb-6">{t("weddingEyebrow")}</p>
             <h2 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[0.95] text-ivory">
               Couture for the<br />
               <span className="italic font-serif text-gradient-gold">most sacred day.</span>
             </h2>
           </div>
           <p className="max-w-sm text-foreground/65 font-light text-sm md:text-base">
-            From the bride's first drape to the groom's mundu — a complete
-            wedding wardrobe, curated under one roof.
+            {t("weddingDesc")}
           </p>
         </div>
 
