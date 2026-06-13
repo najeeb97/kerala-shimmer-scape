@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { RoyalScene } from "./RoyalScene";
 import { useEffect, useState } from "react";
+import { useLang } from "@/lib/i18n";
+
+
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
+  const { t, lang } = useLang();
+
   useEffect(() => setMounted(true), []);
 
   return (
@@ -70,9 +75,9 @@ export function Hero() {
 
 
             <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-8xl lg:text-[9rem] leading-[0.95] max-w-5xl text-[#F7E7CE]">
-              {["Threads", "of", "Heritage,"].map((w, i) => (
+              {[t("heroH1a"), t("heroH1b"), t("heroH1c")].filter(Boolean).map((w, i) => (
                 <motion.span
-                  key={i}
+                  key={`${lang}-${i}`}
                   initial={{ y: 120, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4 + i * 0.12, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
@@ -83,6 +88,7 @@ export function Hero() {
               ))}
               <br />
               <motion.span
+                key={`${lang}-tail`}
                 initial={{ y: 120, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.85, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -95,9 +101,10 @@ export function Hero() {
                   color: "transparent",
                 }}
               >
-                woven for dreams.
+                {t("heroH1d")}
               </motion.span>
             </h1>
+
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -105,9 +112,8 @@ export function Hero() {
               transition={{ delay: 1.2, duration: 1 }}
               className="mt-8 md:mt-10 max-w-xl text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#F7E7CE]/75"
             >
-              Exclusive wedding collections and a complete family shop — Kerala's
-              premier destination for bridal silks, designer ensembles, and
-              everyday luxury.
+              {t("heroSub")}
+
             </motion.p>
 
             <motion.div
@@ -126,14 +132,15 @@ export function Hero() {
                   boxShadow: "0 10px 40px -10px rgba(212,175,55,0.5)",
                 }}
               >
-                Explore Bridal
+                {t("heroCtaBridal")}
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
               <a
                 href="#collections"
                 className="inline-flex items-center gap-3 text-[11px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#F7E7CE]/85 border-b border-[#D4AF37]/50 pb-1 hover:text-[#D4AF37] transition-colors"
               >
-                View Collections
+                {t("heroCtaCollections")}
+
               </a>
             </motion.div>
 
@@ -145,10 +152,11 @@ export function Hero() {
               className="mt-10 md:mt-14 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl"
             >
               {[
-                { n: "40+", l: "Years of Trust" },
-                { n: "10k+", l: "Happy Brides" },
-                { n: "500+", l: "Curated Drapes" },
+                { n: "40+", l: t("statYears") },
+                { n: "10k+", l: t("statBrides") },
+                { n: "500+", l: t("statDrapes") },
               ].map((s) => (
+
                 <div key={s.l} className="border-l border-[#D4AF37]/40 pl-3 sm:pl-4">
                   <div
                     className="font-display text-2xl sm:text-3xl md:text-4xl"
@@ -179,10 +187,11 @@ export function Hero() {
           className="border-t border-[#D4AF37]/20 bg-black/40 backdrop-blur-xl"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 py-4 sm:py-5 flex flex-wrap items-center justify-between gap-3 text-[9px] sm:text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#F7E7CE]/70">
-            <span>· 40+ Years of Trust</span>
-            <span className="hidden sm:inline">· Kanjivaram · Banarasi · Kerala Kasavu</span>
-            <span>· Bridal Studio by Appointment</span>
-            <span className="text-[#D4AF37]">Scroll ↓</span>
+            <span>{t("tickerTrust")}</span>
+            <span className="hidden sm:inline">{t("tickerWeaves")}</span>
+            <span>{t("tickerStudio")}</span>
+            <span className="text-[#D4AF37]">{t("tickerScroll")}</span>
+
           </div>
         </motion.div>
       </div>

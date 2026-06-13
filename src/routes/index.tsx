@@ -18,6 +18,8 @@ import { Cursor } from "@/components/site/Cursor";
 import { HorizontalBridal } from "@/components/site/HorizontalBridal";
 import { ScrollSilk } from "@/components/site/ScrollSilk";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
+import { LanguageProvider } from "@/lib/i18n";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,7 +55,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <LanguageProvider>
     <main className="relative bg-background text-foreground">
+
       <Preloader />
       <Cursor />
       <SmoothScroll />
@@ -74,5 +78,7 @@ function Index() {
       <Contact />
       <Footer />
     </main>
+    </LanguageProvider>
   );
 }
+
