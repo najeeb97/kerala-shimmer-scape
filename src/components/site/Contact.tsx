@@ -1,5 +1,15 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef, MouseEvent } from "react";
+import { useLang } from "@/lib/i18n";
+
+const nl2br = (s: string) =>
+  s.split("\n").map((line, i, arr) => (
+    <span key={i}>
+      {line}
+      {i < arr.length - 1 ? <br /> : null}
+    </span>
+  ));
+
 
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,6 +58,7 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 }
 
 export function Contact() {
+  const { t } = useLang();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
   const orbY = useTransform(scrollYProgress, [0, 1], [-80, 80]);
