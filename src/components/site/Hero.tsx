@@ -152,10 +152,11 @@ export function Hero() {
               className="mt-10 md:mt-14 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl"
             >
               {[
-                { n: "40+", l: "Years of Trust" },
-                { n: "10k+", l: "Happy Brides" },
-                { n: "500+", l: "Curated Drapes" },
+                { n: "40+", l: t("statYears") },
+                { n: "10k+", l: t("statBrides") },
+                { n: "500+", l: t("statDrapes") },
               ].map((s) => (
+
                 <div key={s.l} className="border-l border-[#D4AF37]/40 pl-3 sm:pl-4">
                   <div
                     className="font-display text-2xl sm:text-3xl md:text-4xl"
