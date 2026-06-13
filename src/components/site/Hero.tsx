@@ -112,9 +112,8 @@ export function Hero() {
               transition={{ delay: 1.2, duration: 1 }}
               className="mt-8 md:mt-10 max-w-xl text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#F7E7CE]/75"
             >
-              Exclusive wedding collections and a complete family shop — Kerala's
-              premier destination for bridal silks, designer ensembles, and
-              everyday luxury.
+              {t("heroSub")}
+
             </motion.p>
 
             <motion.div
