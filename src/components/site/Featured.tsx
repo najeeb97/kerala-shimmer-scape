@@ -3,28 +3,29 @@ import kanjivaram from "@/assets/product-kanjivaram.jpg";
 import banarasi from "@/assets/product-banarasi.jpg";
 import kasavu from "@/assets/product-kasavu.jpg";
 import sherwani from "@/assets/product-sherwani.jpg";
-
-const products = [
-  { name: "Mayura Kanjivaram", price: "₹ 84,500", tag: "Bridal Edit", image: kanjivaram },
-  { name: "Champagne Banarasi", price: "₹ 62,000", tag: "Reception", image: banarasi },
-  { name: "Kerala Kasavu Drape", price: "₹ 18,900", tag: "Heritage", image: kasavu },
-  { name: "Royal Ivory Sherwani", price: "₹ 48,000", tag: "Groom", image: sherwani },
-];
+import { useLang } from "@/lib/i18n";
 
 export function Featured() {
+  const { t } = useLang();
+  const products = [
+    { name: "Mayura Kanjivaram", price: "₹ 84,500", tag: t("tagBridal"), image: kanjivaram },
+    { name: "Champagne Banarasi", price: "₹ 62,000", tag: t("tagReception"), image: banarasi },
+    { name: "Kerala Kasavu Drape", price: "₹ 18,900", tag: t("tagHeritage"), image: kasavu },
+    { name: "Royal Ivory Sherwani", price: "₹ 48,000", tag: t("tagGroom"), image: sherwani },
+  ];
   return (
     <section id="collections" className="relative py-24 md:py-44">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12 md:mb-16">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4 md:mb-6">— Featured</p>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-primary mb-4 md:mb-6">{t("featuredEyebrow")}</p>
             <h2 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[0.95] text-ivory">
               The Atelier<br />
               <span className="italic font-serif text-gradient-gold">Selects.</span>
             </h2>
           </div>
           <a href="#wedding" className="text-[11px] uppercase tracking-[0.3em] text-primary border-b border-primary/40 pb-1">
-            View all collections →
+            {t("viewAll")}
           </a>
         </div>
 
