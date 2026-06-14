@@ -19,6 +19,7 @@ import { HorizontalBridal } from "@/components/site/HorizontalBridal";
 import { ScrollSilk } from "@/components/site/ScrollSilk";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { LanguageProvider } from "@/lib/i18n";
+import { BgMusic } from "@/components/site/BgMusic";
 
 
 export const Route = createFileRoute("/")({
@@ -77,6 +78,7 @@ function Index() {
       <Instagram />
       <Contact />
       <Footer />
+      <BgMusic />
     </main>
     </LanguageProvider>
   );
