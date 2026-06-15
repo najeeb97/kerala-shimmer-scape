@@ -8,18 +8,19 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Netlify needs the SSR function in `.netlify/functions-internal` and public assets in `dist`.
-  // The Lovable defaults target a different hosting layout, so set these explicitly.
   nitro: {
     preset: "netlify",
     output: {
       dir: ".netlify/functions-internal",
       serverDir: ".netlify/functions-internal/server",
       publicDir: "dist",
+    },
+  },
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 1500,
     },
   },
 });
